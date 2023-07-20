@@ -16,6 +16,12 @@ import airhornBlast from "./assets/sounds/dj-airhorn.mp3";
 import hawkScreech from "./assets/sounds/hawk.mp3";
 import goodBadUglyWhistle from "./assets/sounds/good-bad-ugly-whistle.mp3";
 
+// add arrow boing
+// add fireball sound
+// add chaotic screaming
+// add lightning bolt sound
+
+
 function App() {
   const [playWow1] = useSound(wow1);
   const [playWow2] = useSound(wow2);
