@@ -20,7 +20,10 @@ import goodBadUglyWhistle from "./assets/sounds/good-bad-ugly-whistle.mp3";
 // add fireball sound
 // add chaotic screaming
 // add lightning bolt sound
-
+// add crickets sound
+// hell yeah brother
+// jeoparady theme
+// holy sound
 
 function App() {
   const [playWow1] = useSound(wow1);
@@ -39,55 +42,83 @@ function App() {
   const [playHawkScreech] = useSound(hawkScreech);
   const [playGoodBadUglyWhistle] = useSound(goodBadUglyWhistle);
 
+  const soundPackages = [
+    {
+      buttonTitle: "Surprise Wow",
+      playSound: playWow1,
+    },
+    {
+      buttonTitle: "Somber Wow",
+      playSound: playWow2,
+    },
+    {
+      buttonTitle: "Sincere Wow",
+      playSound: playWow3,
+    },
+    {
+      buttonTitle: "Power Up",
+      playSound: playPowerUp,
+    },
+    {
+      buttonTitle: "Power Down",
+      playSound: playPowerDown,
+    },
+    {
+      buttonTitle: "Get Item",
+      playSound: playGetItem,
+    },
+    {
+      buttonTitle: "Open Chest",
+      playSound: playOpenChest,
+    },
+    {
+      buttonTitle: "Wilhelm Scream",
+      playSound: playWilhelm,
+    },
+    {
+      buttonTitle: "Arrow Shot",
+      playSound: playArrowShot,
+    },
+    {
+      buttonTitle: "Small Glass Shatter",
+      playSound: playSmallGlassShatter,
+    },
+    {
+      buttonTitle: "Big Glass Shatter",
+      playSound: playBigGlassShatter,
+    },
+    {
+      buttonTitle: "Air Horn",
+      playSound: playAirhorn,
+    },
+    {
+      buttonTitle: "Air Horn Blasts",
+      playSound: playAirhornBlast,
+    },
+    {
+      buttonTitle: "Hawk Screech",
+      playSound: playHawkScreech,
+    },
+    {
+      buttonTitle: "Showdown Whistle",
+      playSound: playGoodBadUglyWhistle,
+    },
+  ];
+
+  const renderButtons = () => {
+    const buttons = soundPackages.map((element) => {
+      return (
+        <button className="sound-button" onClick={element.playSound}>
+          {element.buttonTitle}
+        </button>
+      );
+    });
+    return buttons;
+  };
+
   return (
     <div className="App">
-      <div className="button-container">
-        <button className="sound-button" onClick={playWow1}>
-          Wow (Suprised)
-        </button>
-        <button className="sound-button" onClick={playWow2}>
-          Wow (Somber)
-        </button>
-        <button className="sound-button" onClick={playWow3}>
-          Wow (Sincere)
-        </button>
-        <button className="sound-button" onClick={playGoodBadUglyWhistle}>
-          Showdown Whistle
-        </button>
-        <button className="sound-button" onClick={playPowerUp}>
-          Power Up
-        </button>
-        <button className="sound-button" onClick={playPowerDown}>
-          Power Down
-        </button>
-        <button className="sound-button" onClick={playGetItem}>
-          Get Item
-        </button>
-        <button className="sound-button" onClick={playOpenChest}>
-          Open Chest
-        </button>
-        <button className="sound-button" onClick={playWilhelm}>
-          Wilhelm Scream
-        </button>
-        <button className="sound-button" onClick={playArrowShot}>
-          Arrow Shot
-        </button>
-        <button className="sound-button" onClick={playSmallGlassShatter}>
-          Small Glass Shatter
-        </button>
-        <button className="sound-button" onClick={playBigGlassShatter}>
-          Big Glass Shatter
-        </button>
-        <button className="sound-button" onClick={playAirhorn}>
-          Air Horn
-        </button>
-        <button className="sound-button" onClick={playAirhornBlast}>
-          Air Horn Blast
-        </button>
-        <button className="sound-button" onClick={playHawkScreech}>
-          Hawk Screech
-        </button>
-      </div>
+      <div className="button-container">{renderButtons()}</div>
     </div>
   );
 }
